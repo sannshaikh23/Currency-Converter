@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country and Currency List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to right, #c3e8f0, #50bade);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: #F7ECDE;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #50bade;
+            color: #0a0a0a;
+
+        }
+        img {
+            width: 40px;
+            height: 25px;
+            border-radius: 2px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Country and Currency List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Flag</th>
+                    <th>Country Name</th>
+                    <th>Currency Code</th>
+                </tr>
+            </thead>
+            <tbody id="currencyList"></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Full country and currency list
+        const countries = [
+            { code: "AED", name: "United Arab Emirates", flag: "ae" },
+            { code: "AFN", name: "Afghanistan", flag: "af" },
+            { code: "XCD", name: "Antigua and Barbuda", flag: "ag" },
+            { code: "ALL", name: "Albania", flag: "al" },
+            { code: "AMD", name: "Armenia", flag: "am" },
+            { code: "AOA", name: "Angola", flag: "ao" },
+            { code: "ARS", name: "Argentina", flag: "ar" },
+            { code: "AUD", name: "Australia", flag: "au" },
+            { code: "AZN", name: "Azerbaijan", flag: "az" },
+            { code: "BAM", name: "Bosnia and Herzegovina", flag: "ba" },
+            { code: "BBD", name: "Barbados", flag: "bb" },
+            { code: "BDT", name: "Bangladesh", flag: "bd" },
+            { code: "XOF", name: "Benin", flag: "bj" },
+            { code: "BGN", name: "Bulgaria", flag: "bg" },
+            { code: "BHD", name: "Bahrain", flag: "bh" },
+            { code: "BIF", name: "Burundi", flag: "bi" },
+            { code: "BMD", name: "Bermuda", flag: "bm" },
+            { code: "BND", name: "Brunei", flag: "bn" },
+            { code: "BOB", name: "Bolivia", flag: "bo" },
+            { code: "BRL", name: "Brazil", flag: "br" },
+            { code: "BSD", name: "Bahamas", flag: "bs" },
+            { code: "CAD", name: "Canada", flag: "ca" },
+            { code: "CHF", name: "Switzerland", flag: "ch" },
+            { code: "CNY", name: "China", flag: "cn" },
+            { code: "COP", name: "Colombia", flag: "co" },
+            { code: "EGP", name: "Egypt", flag: "eg" },
+            { code: "EUR", name: "European Union", flag: "eu" },
+            { code: "GBP", name: "United Kingdom", flag: "gb" },
+            { code: "INR", name: "India", flag: "in" },
+            { code: "JPY", name: "Japan", flag: "jp" },
+            { code: "USD", name: "United States", flag: "us" },
+            { code: "NGN", name: "Nigeria", flag: "ng" },
+            { code: "PKR", name: "Pakistan", flag: "pk" },
+            { code: "SEK", name: "Sweden", flag: "se" },
+            { code: "TRY", name: "Turkey", flag: "tr" },
+            { code: "ZAR", name: "South Africa", flag: "za" },
+            { code: "MXN", name: "Mexico", flag: "mx" },
+            { code: "KRW", name: "South Korea", flag: "kr" },
+            { code: "NOK", name: "Norway", flag: "no" },
+            { code: "TWD", name: "Taiwan", flag: "tw" },
+            { code: "PLN", name: "Poland", flag: "pl" },
+            { code: "RUB", name: "Russia", flag: "ru" },
+            { code: "SAR", name: "Saudi Arabia", flag: "sa" },
+            { code: "SGD", name: "Singapore", flag: "sg" },
+            { code: "THB", name: "Thailand", flag: "th" },
+            { code: "VND", name: "Vietnam", flag: "vn" }
+            // You can continue adding other countries from the provided list
+        ];
+
+        // Reference to the table body
+        const tableBody = document.getElementById("currencyList");
+
+        // Populate the table dynamically
+        countries.forEach(country => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td><img src="https://flagcdn.com/w40/${country.flag}.png" alt="${country.name} flag"></td>
+                <td>${country.name}</td>
+                <td>${country.code}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    </script>
+</body>
+</html>
