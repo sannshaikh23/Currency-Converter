@@ -4,6 +4,7 @@ A **simple and interactive currency converter website** built with **HTML, CSS, 
 Convert between currencies using live data for accurate results.
 
 Project Summary
+
 This project provides a user-friendly interface to:
 - Select a **source** and **target** currency.
 - Enter an **amount** to be converted.
